@@ -4,7 +4,7 @@ const app = require("./app");
 const knex = require("./db/connection");
 
 const listener = () => console.log(`Listening on Port ${PORT}!`);
-
+console.log(listener());
 knex.migrate
   .latest()
   .then((migrations) => {
@@ -12,3 +12,4 @@ knex.migrate
     app.listen(PORT, listener);
   })
   .catch(console.error);
+
